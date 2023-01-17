@@ -42,13 +42,13 @@ def create_text_spelling_check():
     spell = spell.to_string()
     spell = re.sub(r'[^\w\s]', '', spell)
     spell = re.sub(r'\n', '', spell)
-    pickle.dump(spell, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spelling_check.pkl', 'wb'))
+    pickle.dump(spell, open('C:/Users/Super_Computer/ProjectIR-backend/resources/spelling_check.pkl', 'wb'))
 
 
 def clean_json_data():
-    json_f = pd.read_json('D:/3rd-2nd/IR-project/emb_files/anime.json')
-    score_df = pd.read_csv('D:/3rd-2nd/IR-953481/py-code/module0/resource/anime.csv')
-    rating = pd.read_csv('D:/3rd-2nd/IR-953481/py-code/module0/resource/anime_rating_1000_users.csv')
+    json_f = pd.read_json('C:/Users/Super_Computer/ProjectIR-backend/emb_files/anime.json')
+    score_df = pd.read_csv('C:/Users/Super_Computer/ProjectIR-backend/resource/anime.csv')
+    rating = pd.read_csv('C:/Users/Super_Computer/ProjectIR-backend/resource/anime_rating_1000_users.csv')
 
     first_hd = json_f['images'].apply(lambda x: x['jpg'])
     # print(first_hd)
@@ -75,10 +75,10 @@ def clean_json_data():
 
 
     clean_df = json_f.dropna()
-    pickle.dump(rating, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/rating_1000p.pkl', 'wb'))
-    pickle.dump(clean_df, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime_data.pkl', 'wb'))
-    pickle.dump(clean_df['title'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_title.pkl', 'wb'))
-    pickle.dump(clean_df['synopsis'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_synopsis.pkl', 'wb'))
+    pickle.dump(rating, open('C:/Users/Super_Computer/ProjectIR-backend/resources/rating_1000p.pkl', 'wb'))
+    pickle.dump(clean_df, open('C:/Users/Super_Computer/ProjectIR-backend/resources/anime_data.pkl', 'wb'))
+    pickle.dump(clean_df['title'], open('C:/Users/Super_Computer/ProjectIR-backend/resources/spell_corr_title.pkl', 'wb'))
+    pickle.dump(clean_df['synopsis'], open('C:/Users/Super_Computer/ProjectIR-backend/resources/spell_corr_synopsis.pkl', 'wb'))
 def title_synopsis_pkl():
     data = pickle.load(open('../resources/anime_data.pkl', 'rb'))
     title = data['title']

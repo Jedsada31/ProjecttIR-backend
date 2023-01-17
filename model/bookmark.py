@@ -1,9 +1,4 @@
-import bcrypt
-import jwt
-from flask import jsonify, request
-import datetime
 from .database import db, ma
-
 
 class Bookmark(db.Model):
     __tablename__ = 'bookmark'

@@ -24,7 +24,7 @@ bookmark_schema = BookmarkSchema()
 bookmarks_schema = BookmarkSchema(many=True)
 
 spell = SpellChecker()
-spell.word_frequency.load_text('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spelling_check.pkl')
+spell.word_frequency.load_text('C:/Users/Super_Computer/ProjectIR-backend/resources/spelling_check.pkl')
 
 
 def check_spell(query):
